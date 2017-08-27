@@ -37,6 +37,16 @@ public  abstract class MyPageAdapter<T> extends PagerAdapter {
             dataLists.add(data);
     }
 
+    public void removeData(int position){
+        viewLists.remove(position);
+        dataLists.remove(position);
+    }
+
+    public void clearData(){
+        viewLists.clear();
+        dataLists.clear();
+    }
+
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         View view = LayoutInflater.from(mContext).inflate(mLayoutId,container,false);
